@@ -1,0 +1,9 @@
+<Solution>
+  <Project Path="CP1.API/CP1.API.csproj" />
+  <Project Path="CP1.Architecture/CP1.Architecture.csproj" />
+  <Project Path="CP1.Business/CP1.Business.csproj" />
+  <Project Path="CP1.Data/CP1.Data.csproj" />
+  <Project Path="CP1.Models/CP1.Models.csproj" />
+  <Project Path="CP1.Minimal/CP1.Minimal.csproj" />
+  <Project Path="CP1.Web/CP1.Web.csproj" />
+</Solution>

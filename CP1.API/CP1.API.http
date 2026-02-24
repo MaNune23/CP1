@@ -1,0 +1,17 @@
+@CP1.API_HostAddress = https://localhost:7191
+
+### Create (JSON string body)
+POST {{CP1.API_HostAddress}}/api/foodbankapi
+Content-Type: application/json
+
+"{\"foodItemId\":0,\"name\":\"Demo Item\",\"category\":\"Test\",\"brand\":\"CP1\",\"price\":1.23,\"quantityInStock\":5,\"isActive\":true}"
+
+### Update (JSON string body)
+PUT {{CP1.API_HostAddress}}/api/foodbankapi/1
+Content-Type: application/json
+
+"{\"foodItemId\":1,\"name\":\"Demo Item Updated\",\"category\":\"Test\",\"brand\":\"CP1\",\"price\":2.34,\"quantityInStock\":10,\"isActive\":true}"
+
+### Delete
+DELETE {{CP1.API_HostAddress}}/api/foodbankapi/1
+Accept: application/json

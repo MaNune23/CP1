@@ -1,0 +1,46 @@
+@model IEnumerable<FoodbankViewModel>
+
+@{
+    ViewData["Title"] = "Foodbank";
+}
+
+<h1>Foodbank</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Create</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>FoodItemId</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Brand</th>
+            <th>QuantityInStock</th>
+            <th>ExpirationDate</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model)
+{
+        <tr>
+            <td>@item.FoodItemId</td>
+            <td>@item.Name</td>
+            <td>@item.Category</td>
+            <td>@item.Brand</td>
+            <td>@item.QuantityInStock</td>
+            <td>@(item.ExpirationDate?.ToString("yyyy-MM-dd"))</td>
+            <td class="text-end">
+                <a class="btn btn-sm btn-secondary" asp-action="Edit" asp-route-id="@item.FoodItemId">Edit</a>
+
+                <form asp-action="Delete" asp-route-id="@item.FoodItemId" method="post" style="display:inline">
+                    @Html.AntiForgeryToken()
+                    <button class="btn btn-sm btn-danger" type="submit">Delete</button>
+                </form>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
